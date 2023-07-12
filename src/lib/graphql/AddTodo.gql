@@ -1,0 +1,5 @@
+mutation AddTodo($input: CreateTodoInput!, $userId: ID!) {
+	createTodo(input: $input) {
+		...User_Todos_insert @parentID(value: $userId)
+	}
+}
